@@ -10,6 +10,7 @@ void main() {
       theme: ThemeData(
         primaryColor: AppColorTheme.kPrimary,
         scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'inter',
       ),
     ),
   );

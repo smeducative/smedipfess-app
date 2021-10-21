@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smedipfess/components/custom_text_field.dart';
+import 'package:smedipfess/screens/components/custom_text_field.dart';
 import 'package:smedipfess/constants/theme.dart';
+import 'package:smedipfess/screens/home/home_sceen.dart';
+import 'package:smedipfess/screens/home/screen_router.dart';
 
 class LoginModal extends StatefulWidget {
   const LoginModal({Key? key}) : super(key: key);
@@ -84,7 +86,14 @@ class _LoginModalState extends State<LoginModal> {
                   height: 60,
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const ScreenRouter(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
