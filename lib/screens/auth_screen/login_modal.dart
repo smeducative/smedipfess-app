@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smedipfess/provider/auth_provider.dart';
 import 'package:smedipfess/screens/components/custom_text_field.dart';
 import 'package:smedipfess/constants/theme.dart';
 import 'package:smedipfess/screens/home/home_sceen.dart';
@@ -87,6 +88,7 @@ class _LoginModalState extends State<LoginModal> {
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
                     onPressed: () {
+                      AuthProvider().login("email", "password");
                       Navigator.of(context).pop();
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(

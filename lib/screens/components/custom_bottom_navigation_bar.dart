@@ -50,7 +50,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    "assets/icons/box.svg",
+                    "assets/icons/Stack.svg",
                     color: widget.selectedIndex == 1
                         ? AppColorTheme.kPrimary
                         : Colors.grey,
@@ -59,7 +59,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    "assets/icons/bag.svg",
+                    "assets/icons/Explore.svg",
                     color: widget.selectedIndex == 2
                         ? AppColorTheme.kPrimary
                         : Colors.grey,
@@ -68,7 +68,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    "assets/icons/user.svg",
+                    "assets/icons/notification.svg",
                     color: widget.selectedIndex == 3
                         ? AppColorTheme.kPrimary
                         : Colors.grey,

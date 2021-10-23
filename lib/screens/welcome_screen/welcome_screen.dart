@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:smedipfess/constants/theme.dart';
+import 'package:smedipfess/provider/auth_provider.dart';
 import 'package:smedipfess/screens/auth_screen/login_modal.dart';
+import 'package:smedipfess/screens/home/home_sceen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isLoggedIn = AuthProvider().isLoggedIn;
+
+    if (isLoggedIn == true) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      );
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -20,7 +33,8 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             const Positioned(
-              height: 200,
+              height: 220,
+              top: 36,
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.all(24.0),
@@ -33,18 +47,21 @@ class WelcomeScreen extends StatelessWidget {
             Positioned(
               bottom: 0,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.77,
+                height: MediaQuery.of(context).size.height * 0.70,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    )),
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 48.0),
+                        padding: const EdgeInsets.only(top: 64.0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
