@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         shrinkWrap: true,
-        // physics: const BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           Stack(
             children: [

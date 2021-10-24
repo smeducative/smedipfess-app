@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smedipfess/constants/theme.dart';
+import 'package:smedipfess/screens/classmate_screen.dart';
 import 'package:smedipfess/screens/components/custom_bottom_navigation_bar.dart';
 import 'package:smedipfess/screens/home/home_sceen.dart';
 
@@ -26,8 +27,8 @@ class _ScreenRouterState extends State<ScreenRouter> {
       body: Stack(
         children: [
           [
-            HomeScreen(),
-            HomeScreen(),
+            const HomeScreen(),
+            const ClassMateScreen(),
             HomeScreen(),
             HomeScreen(),
           ][_selectedIndex],

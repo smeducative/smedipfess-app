@@ -6,6 +6,7 @@ class AppColorTheme {
   static const Color primaryExtraSoft = Color(0xFFEEF4F4);
   static const Color secondary = Color(0xFFEDE5CC);
   static const Color whiteSoft = Color(0xFFF8F8F8);
+  static const Color secondaryYellow = Color(0xFFFFAB00);
 
   static LinearGradient bottomShadow = LinearGradient(
     colors: [
