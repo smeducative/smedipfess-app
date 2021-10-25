@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:smedipfess/constants/theme.dart';
 import 'package:smedipfess/screens/classmate_screen.dart';
 import 'package:smedipfess/screens/components/custom_bottom_navigation_bar.dart';
+import 'package:smedipfess/screens/explore_screen.dart';
 import 'package:smedipfess/screens/home/home_sceen.dart';
+import 'package:smedipfess/screens/notification_screen.dart';
 
 class ScreenRouter extends StatefulWidget {
   const ScreenRouter({Key? key}) : super(key: key);
@@ -29,8 +31,8 @@ class _ScreenRouterState extends State<ScreenRouter> {
           [
             const HomeScreen(),
             const ClassMateScreen(),
-            HomeScreen(),
-            HomeScreen(),
+            const ExploreScreen(),
+            const NotificationScreen(),
           ][_selectedIndex],
           const BottomGradientWidget(),
         ],

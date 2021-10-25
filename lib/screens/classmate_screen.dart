@@ -18,94 +18,80 @@ class ClassMateScreen extends StatelessWidget {
         backgroundColor: AppColorTheme.kPrimary,
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          color: AppColorTheme.secondaryYellow,
-          child: Stack(
-            children: [
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.22,
-                bottom: 0,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.symmetric(vertical: 35),
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: AppColorTheme.secondaryYellow,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              blurRadius: 20,
-                              offset: const Offset(0, 4),
+      body: ListView(
+        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height * 0.28,
+            decoration: const BoxDecoration(
+              color: AppColorTheme.secondaryYellow,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    height: 120,
+                    decoration: const BoxDecoration(
+                        color: AppColorTheme.secondaryYellow,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20.0),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                            offset: Offset(
+                              0,
+                              8.0,
                             ),
-                          ],
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColorTheme.secondaryYellow,
-                              AppColorTheme.secondaryYellow.withOpacity(0.8),
-                              AppColorTheme.secondaryYellow.withOpacity(0.5),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
                           ),
+                        ]),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                    left: 20,
+                    right: 20,
+                  ),
+                  child: Row(
+                    children: const [
+                      Text(
+                        'Teman Kelas',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 20,
-                          left: 20,
-                          right: 20,
-                        ),
-                        child: Row(
-                          children: const [
-                            Text(
-                              'Teman kelas',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      ListView(
-                        shrinkWrap: true,
-                        physics: const BouncingScrollPhysics(),
-                        children: const [
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                          TemanKelasItem(),
-                        ],
-                      )
                     ],
                   ),
                 ),
-              )
-            ],
+                ListView.builder(
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 25,
+                  itemBuilder: (context, index) {
+                    return const TemanKelasItem();
+                  },
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -157,7 +143,7 @@ class TemanKelasItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Arista Oktaviani',
+                      'Sandy Purnomo Aji',
                       style: TextStyle(
                         fontFamily: 'poppins',
                         fontWeight: FontWeight.w500,
